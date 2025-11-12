@@ -15,7 +15,7 @@ def search_record(record, pattern):
         match_start = found_match.start(0)
         match_end = found_match.end(0)
         return record | {
-            'window': record['text'][(match_start-20):(match_end+20)],
+            'window': record['text'][(match_start-100):(match_end+100)],
             'matched_query': pattern
         }
     else:
@@ -28,7 +28,7 @@ app = Flask(__name__)
 def search():
 
     queries = request.args['q'].split(',') if 'q' in request.args and len(request.args['q']) > 0 else []
-    page = request.args['page'] if 'page' in request.args else 0
+    page = int(request.args['page']) if 'page' in request.args else 0
 
     with open('HouseFiles_TextAttachments_All.json', 'r') as in_file:
         records = json.load(in_file)
