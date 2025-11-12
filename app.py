@@ -37,7 +37,7 @@ def search():
 
     if len(queries) > 0:
         for query in queries:
-            matching_records = [search_record(record, query) for record in records if search_record(record, pattern) is not False]
+            matching_records = [search_record(record, query) for record in records if search_record(record, query) is not False]
             results.extend(matching_records)
 
     has_more = False
