@@ -46,7 +46,7 @@ def search():
         has_more = page * show < len(results)
         output_records = results[(show*page):(show*(page+1))]
     else:
-        output_records = results
+        output_records = results[0:20]
 
     r = Response(json.dumps({
         'hasMore':has_more,

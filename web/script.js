@@ -11,28 +11,27 @@ $(function() {
         $.getJSON(query, 
             function(data) {
                 console.log(data)
+                var results = data['records']
+
+                for (var i=0; i<results.length; i++) {
+                    $('#results-container').append(
+                        `
+                        <div class="result">
+                            <p class="result-name"><b>FILENAME</b></p>
+                            <p class="result-header">HEADER</p>
+                            <p class="result-match">MATCH_WINDOW</p>
+                        </div>
+                        `.replace('FILENAME', results[i]['file'])
+                        .replace('HEADER', results[i]['sample'])
+                        .replace('MATCH_WINDOW', results[i]['window'])
+                    )
+                }
             }
         )
 
-        let response = await fetch(query, {
-            method: 'POST'
-        })
 
-        const r = await response.json();
-        
-        var results = r['records']
 
-        for (var i=0; i<results.length; i++) {
-            $('#results-container').append(
-                `
-                <div class="result">
-                    <p><b>FILENAME</b></p>
-                    <p>HEADER</p>
-                    <p>MATCH_WINDOW</p>
-                </div>
-                `.replace('FILENAME', results[i]['file'])
-            )
-        }
+
     })
 
 })
