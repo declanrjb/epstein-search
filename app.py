@@ -53,7 +53,7 @@ def search():
         'records':results
     }), mimetype='application/json')
     
-    #r.headers.add('Access-Control-Allow-Origin', '*')
+    r.headers.add('Access-Control-Allow-Origin', 'https://declanrjb.github.io')
     return r
 
 if __name__ == '__main__':

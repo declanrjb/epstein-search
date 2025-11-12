@@ -8,6 +8,12 @@ $(function() {
 
         var query = 'https://epstein-search.onrender.com/search?q=Ghislaine&page=0&show=5';
 
+        $.getJSON(query, 
+            function(data) {
+                console.log(data)
+            }
+        )
+
         let response = await fetch(query, {
             method: 'POST'
         })
