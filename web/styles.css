@@ -32,3 +32,21 @@
 #search-exec:hover {
     background-color: #1f487e;
 }
+
+.result {
+    border-top: 2px solid black;
+    margin-bottom: 10px;
+}
+
+.search-controls {
+    height: 75px;
+}
+
+.results {
+    margin-top: 20px;
+}
+
+.flag {
+    background-color: #1f487e;
+    color: white;
+}

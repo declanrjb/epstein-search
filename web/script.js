@@ -18,8 +18,8 @@ $(function() {
                         `
                         <div class="result">
                             <p class="result-name"><b>FILENAME</b></p>
-                            <p class="result-header">HEADER</p>
-                            <p class="result-match">MATCH_WINDOW</p>
+                            <p class="result-header"><span class=flag">DOC HEADER</span> HEADER</p>
+                            <p class="result-match"><span class="flag">MATCH</span> MATCH_WINDOW</p>
                         </div>
                         `.replace('FILENAME', results[i]['file'])
                         .replace('HEADER', results[i]['sample'])
