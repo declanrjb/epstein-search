@@ -16,7 +16,8 @@ def search_record(record, pattern):
         match_end = found_match.end(0)
         return record | {
             'window': record['text'][(match_start-100):(match_end+100)],
-            'matched_query': pattern
+            'matched_query': pattern,
+            'match_term': found_match.group(0)
         }
     else:
         return False

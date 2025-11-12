@@ -6,7 +6,7 @@ $(function() {
     $('#search-exec').on('click', async function(e) {
         console.log('sending')
 
-        var query = 'https://epstein-search.onrender.com/search?q=Ghislaine&page=0&show=5';
+        var query = 'https://epstein-search.onrender.com/search?q=' + e.currentTarget.value + '&page=0&show=20';
 
         $.getJSON(query, 
             function(data) {
@@ -18,19 +18,17 @@ $(function() {
                         `
                         <div class="result">
                             <p class="result-name"><b>FILENAME</b></p>
-                            <p class="result-header"><span class=flag">DOC HEADER</span> HEADER</p>
-                            <p class="result-match"><span class="flag">MATCH</span> MATCH_WINDOW</p>
+                            <p class="result-header"><span class="flag">DOC HEADER:</span> HEADER</p>
+                            <p class="result-match"><span class="flag">MATCH:</span> MATCH_WINDOW</p>
                         </div>
                         `.replace('FILENAME', results[i]['file'])
                         .replace('HEADER', results[i]['sample'])
                         .replace('MATCH_WINDOW', results[i]['window'])
-                    )
+                        .replace(results[i]['match_term'], '<span class="highlight">' + results[i]['match_term'] + '</span>')
+                    ).attr('url', results[i]['url'])
                 }
             }
         )
-
-
-
 
     })
 
