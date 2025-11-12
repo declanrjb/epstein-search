@@ -21,7 +21,7 @@ $(function() {
                             <p class="result-header"><span class="flag">DOC HEADER:</span> HEADER</p>
                             <p class="result-match"><span class="flag">MATCH:</span> MATCH_WINDOW</p>
                         </div>
-                        `.replace('FILENAME', results[i]['file'])
+                        `.replace('FILENAME', results[i]['file_stem'])
                         .replace('HEADER', results[i]['sample'])
                         .replace('MATCH_WINDOW', results[i]['window'])
                         .replace(results[i]['match_term'], '<span class="highlight">' + results[i]['match_term'] + '</span>')
