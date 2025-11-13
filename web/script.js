@@ -16,17 +16,22 @@ $(function() {
                 for (var i=0; i<results.length; i++) {
                     $('#results-container').append(
                         `
-                        <div class="result">
+                        <div class="result" url="URL_FILLER">
                             <p class="result-name"><b>FILENAME</b></p>
-                            <p class="result-header"><span class="flag">DOC HEADER:</span> HEADER</p>
+                            <p class="result-header"><span class="flag">DOC HEADER:</span> HEADER_PLACEHOLDER</p>
                             <p class="result-match"><span class="flag">MATCH:</span> MATCH_WINDOW</p>
                         </div>
                         `.replace('FILENAME', results[i]['file_stem'])
-                        .replace('HEADER', results[i]['sample'])
+                        .replace('HEADER_PLACEHOLDER', results[i]['sample'])
                         .replace('MATCH_WINDOW', results[i]['window'])
                         .replace(results[i]['match_term'], '<span class="highlight">' + results[i]['match_term'] + '</span>')
-                    ).attr('url', results[i]['url'])
+                        .replace('URL_FILLER', results[i]['url'])
+                    )
                 }
+
+                $('.result').on('click', function(e) {
+                    window.location.href = e.currentTarget.url;
+                })
             }
         )
 
