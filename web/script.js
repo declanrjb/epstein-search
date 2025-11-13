@@ -24,7 +24,7 @@ $(function() {
                         `.replace('FILENAME', results[i]['file_stem'])
                         .replace('HEADER_PLACEHOLDER', results[i]['sample'])
                         .replace('MATCH_WINDOW', results[i]['window'])
-                        .replace(results[i]['match_term'], '<span class="highlight">' + results[i]['match_term'] + '</span>')
+                        .replaceAll(results[i]['match_term'], '<span class="highlight">' + results[i]['match_term'] + '</span>')
                         .replace('URL_FILLER', results[i]['url'])
                     )
                 }
