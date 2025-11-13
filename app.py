@@ -51,7 +51,9 @@ def search():
 
     r = Response(json.dumps({
         'hasMore':has_more,
-        'records':output_records
+        'records':output_records,
+        'queries': queries,
+        'results': results
     }), mimetype='application/json')
     
     r.headers.add('Access-Control-Allow-Origin', 'https://declanrjb.github.io')
