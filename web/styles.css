@@ -37,7 +37,8 @@
 .result {
     border-top: 2px solid black;
     margin-bottom: 10px;
-    line-height: 1.1em;
+    line-height: 1.3em;
+    font-size: 1.1em;
 }
 
 .search-controls {
@@ -58,4 +59,8 @@
 
 h1 {
     margin: 10px;
+}
+
+.highlight {
+    background-color: yellow;
 }
