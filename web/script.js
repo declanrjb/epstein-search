@@ -6,7 +6,7 @@ $(function() {
     $('#search-exec').on('click', async function(e) {
         console.log('sending')
 
-        var query = 'https://epstein-search.onrender.com/search?q=' + e.currentTarget.value + '&page=0&show=20';
+        var query = 'https://epstein-search.onrender.com/search?q=' + $('#epstein-search').val() + '&page=0&show=20';
 
         $.getJSON(query, 
             function(data) {
