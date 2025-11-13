@@ -30,7 +30,7 @@ $(function() {
                 }
 
                 $('.result').on('click', function(e) {
-                    window.location.href = e.currentTarget.url;
+                    window.location.href = e.currentTarget.getAttribute('url');
                 })
             }
         )
